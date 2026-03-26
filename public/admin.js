@@ -196,3 +196,4 @@ async function makeVehicleAvailable(vehicleId) {
   loadAllAdminData();
 }
 
+
