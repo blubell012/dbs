@@ -104,9 +104,9 @@ async function loadPayments() {
       <td>₹${p.amount}</td>
       <td>${p.status}</td>
       <td>
-        ${p.status === "Not Available"
-          ? `<button onclick="makeVehicleAvailable(${p.id})">Make Available</button>`
-          : "Already Available"}
+        ${p.status === "Pending"
+          ? `<button onclick="approvePayment(${p.rental_id})">Approve</button>`
+          : "Done"}
       </td>
     </tr>
   `).join("");
@@ -151,13 +151,13 @@ async function loadVehicles() {
   tbody.innerHTML = data.map(v => `
     <tr>
       <td>${v.id}</td>
-      <td>${v.name}</td>
+      <td>${v.vehicle_name}</td>
       <td>${v.model}</td>
       <td>${v.registration_number}</td>
       <td>₹${v.price_per_hour}</td>
-      <td>${v.available > 0 ? "Available" : "Not Available"}</td>
+      <td>${v.status}</td>
       <td>
-        ${v.available === 0
+        ${v.status === "Not Available"
           ? `<button onclick="makeVehicleAvailable(${v.id})">Make Available</button>`
           : "Already Available"}
       </td>
@@ -195,5 +195,4 @@ async function makeVehicleAvailable(vehicleId) {
   alert(data.message || data.error);
   loadAllAdminData();
 }
-
 
