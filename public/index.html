@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy Rentals</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="customer-body">
+  <header class="navbar colorful">
+    <div>
+      <h1 class="logo">Easy Rentals</h1>
+      <p class="tagline">Pick a ride and book in minutes</p>
+    </div>
+    <a href="/admin" class="admin-link-btn">Admin Login</a>
+  </header>
+
+  <section class="hero hero-gradient">
+    <h2>Available Two Wheelers</h2>
+    <p>Choose a vehicle and continue to booking.</p>
+  </section>
+
+  <section id="vehicleCatalog" class="vehicle-grid">
+    <h2>aaaaa</h2>
+    <p>nbbbbbbbbbbbb</p>
+
+  </section>
+
+  <section id="bookingSection" class="booking-section hidden">
+    <div class="card customer-card">
+      <h2 id="bookingTitle">Book Vehicle</h2>
+
+      <form id="previewForm">
+        <input type="hidden" id="selectedVehicleName" />
+
+        <label>Pickup Date</label>
+        <input type="date" id="pickupDate" required />
+
+        <label>Pickup Time</label>
+        <select id="pickupTime" required></select>
+
+        <label>Drop Date</label>
+        <input type="date" id="dropDate" required />
+
+        <label>Drop Time</label>
+        <select id="dropTime" required></select>
+
+        <button type="submit">Proceed</button>
+      </form>
+
+      <div id="previewBox" class="hidden preview-box">
+        <h3>Booking Summary</h3>
+        <p id="summaryVehicle"></p>
+        <p id="summaryHours"></p>
+        <p id="summaryPrice"></p>
+
+        <form id="bookingForm">
+          <input type="text" id="bookFirstName" placeholder="First Name" required />
+          <input type="text" id="bookLastName" placeholder="Last Name" required />
+          <input type="text" id="bookAge" placeholder="Age" required />
+          <input type="text" id="bookPhone" placeholder="Phone Number (10 digits)" required maxlength="10" />
+          <textarea id="bookAddress" placeholder="Address" required></textarea>
+          <input type="text" id="bookLicenseNumber" placeholder="License Number" required />
+          <button type="submit">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
